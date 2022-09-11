@@ -2,7 +2,7 @@ import {Button, Container, Flex, Stack, Text,} from '@chakra-ui/react';
 import {useRouter} from "next/router";
 import ROUTES from "../../routes";
 
-export default function Hero() {
+export default () => {
     const router = useRouter()
 
     const handleOnClick = async () => {
