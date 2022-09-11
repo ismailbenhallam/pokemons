@@ -1,8 +1,35 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type {AppProps} from 'next/app'
+import {ChakraProvider, extendTheme, withDefaultColorScheme} from "@chakra-ui/react";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const theme = extendTheme({
+            colors: {
+                secondary: {
+                    500: "#FECA1B",
+                    600: "#CA9D00",
+                    700: "#987200",
+                    800: "#6A4A00",
+                    900: "#452400",
+                },
+                primary: {
+                    500: "#3761A8",
+                    600: "#5A7EC8",
+                    700: "#7B9CE9",
+                    800: "#9CBBFF",
+                    900: "#BEDCFF",
+                }
+            }
+        },
+        withDefaultColorScheme({
+            colorScheme: "primary",
+        }),
+    )
+
+
+function MyApp({Component, pageProps}: AppProps) {
+    return <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+    </ChakraProvider>
 }
 
 export default MyApp
