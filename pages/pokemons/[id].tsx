@@ -14,7 +14,7 @@ import {
 import {SPRITES, URL_ID} from "../../constants";
 import {useRouter} from "next/router";
 
-export default () => {
+const Pokemon = () => {
     const router = useRouter()
     const {id} = router.query
 
@@ -37,6 +37,7 @@ export default () => {
                             src={
                                 SPRITES.OFFICIAL_ARTWORK.replace(URL_ID, String(id))
                             }
+                            alt="Pokemon official artwork"
                         />
                     </Flex>
                     <Stack
@@ -126,3 +127,5 @@ export default () => {
         </Container>
     )
 }
+
+export default Pokemon

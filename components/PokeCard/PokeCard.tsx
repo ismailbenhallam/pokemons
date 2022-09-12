@@ -9,7 +9,7 @@ interface Props extends NamedAPIResource {
     id: number
 }
 
-export default (props: Props) => (
+const PokeCard = (props: Props) => (
     <Center py={6}>
         <Box
             maxW={'320px'}
@@ -102,3 +102,5 @@ export default (props: Props) => (
         </Box>
     </Center>
 )
+
+export default PokeCard

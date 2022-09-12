@@ -3,7 +3,7 @@ import React from "react";
 import {Box} from "@chakra-ui/react";
 
 
-const Glass = styled(Box)`
+const StyledGlass = styled(Box)`
   background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -13,10 +13,12 @@ const Glass = styled(Box)`
   padding: 40px 80px;
 `
 
-export default (props: any) => {
+const Glass = (props: any) => {
     return (
-        <Glass {...props}>
+        <StyledGlass {...props}>
             {props.children}
-        </Glass>
+        </StyledGlass>
     );
 }
+
+export default Glass

@@ -12,10 +12,7 @@ const Home: NextPage = () => {
                 bgImage={BACKGROUND1_SRC}>
             <Glass>
                 <Stack direction="column" alignItems="center">
-                    <Logo style={{
-                        width: "80%",
-                        maxWidth: "650px"
-                    }}/>
+                    <Logo />
                     <Link href={ROUTES.POKEMONS}>
                         <Button
                             rounded={'full'}
