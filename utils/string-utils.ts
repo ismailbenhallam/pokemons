@@ -1,0 +1,1 @@
+export const titleCase = (value: string) => value[0].toUpperCase() + value.substring(1)

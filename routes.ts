@@ -1,5 +1,5 @@
 const ROUTES = {
-    POKEMONS: "/pokemons"
+    POKEMONS: "/pokemons",
 }
 
 export default ROUTES
