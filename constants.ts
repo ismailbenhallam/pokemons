@@ -7,6 +7,7 @@ export const LOGO_SRC = "https://raw.githubusercontent.com/PokeAPI/media/master/
 export const BACKGROUND1_SRC = 'https://assets.pokemon.com/assets//cms2/img/watch-pokemon-tv/_downloads/movie14_wallpaper3_1920.jpg'
 export const BACKGROUND2_SRC = 'https://assets.pokemon.com/assets//cms2/img/watch-pokemon-tv/_downloads/movie14_wallpaper1_1920.jpg'
 export const BACKGROUND3_SRC = 'https://assets.pokemon.com/assets//cms2/img/watch-pokemon-tv/_downloads/movie14_wallpaper2_1920.jpg'
+export const POKEBALL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png'
 
 export const URL_ID = `{ID}`;
 export const SPRITES = {

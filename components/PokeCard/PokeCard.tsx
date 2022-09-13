@@ -1,6 +1,6 @@
-import {Avatar, Badge, Box, Button, Center, Heading, Link, Stack, Text, useColorModeValue,} from '@chakra-ui/react';
+import {Box, Center, Heading, Image, Stack, useColorModeValue,} from '@chakra-ui/react';
 import {titleCase} from "utils/string-utils";
-import {SPRITES, URL_ID} from "../../constants";
+import {POKEBALL, SPRITES, URL_ID} from "../../constants";
 import NextLink from "next/link";
 import ROUTES from "../../routes";
 import {NamedAPIResource} from "../../types";
@@ -10,30 +10,30 @@ interface Props extends NamedAPIResource {
 }
 
 const PokeCard = (props: Props) => (
-    <Center py={6}>
+    <Center py={6} transition="all .25s ease" _hover={{transform: 'scale(1.01)'}}>
         <Box
             maxW={'320px'}
             w={'full'}
             bg={useColorModeValue('white', 'gray.900')}
             boxShadow={'2xl'}
-            rounded={'lg'}
+            rounded={'xl'}
             p={6}
             textAlign={'center'}>
-            <Avatar
-                size={'xl'}
+            <Image
                 src={
                     SPRITES.OFFICIAL_ARTWORK.replace(URL_ID, String(props.id))
                 }
+                bgColor={"white"}
                 mb={4}
                 pos={'relative'}
             />
-            <Heading fontSize={'2xl'} fontFamily={'body'}>
+            <Heading fontSize={'33px'} fontFamily={'mongo'} mb={5}>
                 {titleCase(props.name)}
             </Heading>
-            <Text fontWeight={600} color={'gray.500'} mb={4}>
-                @lindsey_jam3s
-            </Text>
-            <Text
+            {/*<Text fontWeight={600} color={'gray.500'} mb={3}>
+                @{props.id}
+            </Text>*/}
+            {/* <Text
                 textAlign={'center'}
                 color={useColorModeValue('gray.700', 'gray.400')}
                 px={3}>
@@ -42,9 +42,9 @@ const PokeCard = (props: Props) => (
                     #tag
                 </Link>{' '}
                 me in your posts
-            </Text>
+            </Text>*/}
 
-            <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
+            {/*<Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
                 <Badge
                     px={2}
                     py={1}
@@ -66,18 +66,27 @@ const PokeCard = (props: Props) => (
                     fontWeight={'400'}>
                     #music
                 </Badge>
-            </Stack>
+            </Stack>*/}
 
-            <Stack mt={8} direction={'row'} spacing={4}>
+            <Stack direction={'row'} spacing={4} justifyContent="center">
                 <NextLink href={`${ROUTES.POKEMONS}/${props.id}`}>
-                    <Button
+                    <Image
+                        cursor="pointer"
+                        src={POKEBALL}
+                        boxSize='40px'
+                        transition="all .25s ease" _hover={{transform: 'scale(1.3)'}}
+                    />
+                    {/*<Button
                         flex={1}
-                        fontSize={'md'}
+                        fontSize={'18px'}
                         rounded={'full'}
-                        color="secondary.500"
-                        bgColor="primary.500">
+                        bgColor="secondary.500"
+                        _hover={{
+                            bgColor: "secondary.600"
+                        }}
+                        color="primary.500">
                         Check Pokemon
-                    </Button>
+                    </Button>*/}
                 </NextLink>
 
                 {/*Add to favorite*/}
