@@ -12,6 +12,7 @@ interface Props extends NamedAPIResource {
 const PokeCard = (props: Props) => (
     <Center py={6} transition="all .25s ease" _hover={{transform: 'scale(1.01)'}}>
         <Box
+            border={"1px solid black"}
             maxW={'320px'}
             w={'full'}
             bg={useColorModeValue('white', 'gray.900')}

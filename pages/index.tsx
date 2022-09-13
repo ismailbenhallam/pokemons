@@ -1,5 +1,5 @@
 import type {NextPage} from 'next'
-import {Button, Center, Stack} from "@chakra-ui/react";
+import {Button, Image, Stack} from "@chakra-ui/react";
 import Logo from "../components/Logo";
 import ROUTES from "../routes";
 import Link from "next/link";
@@ -8,11 +8,19 @@ import {BACKGROUND1_SRC} from "../constants";
 
 const Home: NextPage = () => {
     return (
-        <Center h='100vh' w='100vw' bgRepeat={"no-repeat"}
-                bgImage={BACKGROUND1_SRC}>
-            <Glass>
+        <Stack direction="row" height={"100vh"} maxWidth={"100vw"} justifyContent={"center"} alignContent={"center"}>
+            <Image src={BACKGROUND1_SRC} width={"100vw"} objectFit={"cover"}/>
+            <Glass position="absolute" style={{
+                margin: "auto",
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
+                height: "max-content",
+                textAlign: "center",
+            }}>
                 <Stack direction="column" alignItems="center">
-                    <Logo />
+                    <Logo/>
                     <Link href={ROUTES.POKEMONS}>
                         <Button
                             rounded={'full'}
@@ -27,8 +35,7 @@ const Home: NextPage = () => {
                     </Link>
                 </Stack>
             </Glass>
-        </Center>
-
+        </Stack>
     )
 }
 
