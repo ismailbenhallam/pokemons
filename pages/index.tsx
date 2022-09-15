@@ -1,10 +1,10 @@
 import type {NextPage} from 'next'
 import {Button, Image, Stack} from "@chakra-ui/react";
-import Logo from "../components/Logo";
-import ROUTES from "../routes";
+import Logo from "components/Logo";
+import ROUTES from "utils/routes";
 import Link from "next/link";
-import Glass from "../components/Glass";
-import {BACKGROUND1_SRC} from "../constants";
+import Glass from "components/Glass";
+import {BACKGROUND1_SRC} from "utils/constants";
 
 const Home: NextPage = () => {
     return (

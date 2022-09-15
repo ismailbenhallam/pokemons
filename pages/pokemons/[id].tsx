@@ -11,7 +11,7 @@ import {
     Text,
     useColorModeValue,
 } from '@chakra-ui/react';
-import {SPRITES, URL_ID} from "../../constants";
+import {SPRITES, URL_ID} from "utils/constants";
 import {useRouter} from "next/router";
 
 const Pokemon = () => {

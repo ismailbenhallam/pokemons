@@ -1,9 +1,9 @@
 import {Box, Center, Heading, Image, Stack, useColorModeValue,} from '@chakra-ui/react';
 import {titleCase} from "utils/string-utils";
-import {POKEBALL, SPRITES, URL_ID} from "../../constants";
+import {POKEBALL, SPRITES, URL_ID} from "utils/constants";
 import NextLink from "next/link";
-import ROUTES from "../../routes";
-import {NamedAPIResource} from "../../types";
+import ROUTES from "utils/routes";
+import {NamedAPIResource} from "utils/types";
 
 interface Props extends NamedAPIResource {
     id: number

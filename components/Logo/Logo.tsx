@@ -1,5 +1,5 @@
 import React from "react";
-import {LOGO_SRC} from "../../constants";
+import {LOGO_SRC} from "utils/constants";
 import {ImageProps} from "next/dist/client/image";
 import {Image} from "@chakra-ui/react";
 
