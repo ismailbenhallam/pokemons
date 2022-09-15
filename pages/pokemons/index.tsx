@@ -1,15 +1,14 @@
 import type {GetStaticProps, InferGetStaticPropsType, NextPage} from 'next'
 import {SimpleGrid} from '@chakra-ui/react'
-import {POKEAPI_SPECIES, POKEMONS_COUNT} from "utils/constants";
-import axios, {AxiosResponse} from "axios";
 import PokeCard from "components/PokeCard";
-import {NamedAPIResource, NamedAPIResourceList} from "utils/types";
+import {NamedAPIResource} from "utils/types";
+import fetchAllPokemons from "networking/functions/fetch-all-pokemons";
 
 export const getStaticProps: GetStaticProps<{ data: Array<NamedAPIResource> }> = async () => {
-    const response: AxiosResponse<NamedAPIResourceList> = await axios.get(`${POKEAPI_SPECIES}?offset=0&limit=${POKEMONS_COUNT}`)
+    const response = await fetchAllPokemons()
     return {
         props: {
-            data: response.data.results,
+            data: response.results
         }
     }
 };
