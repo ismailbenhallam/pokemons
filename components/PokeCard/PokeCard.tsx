@@ -1,6 +1,6 @@
 import {Box, Center, Heading, Image, Stack, useColorModeValue,} from '@chakra-ui/react';
 import {titleCase} from "utils/string-utils";
-import {POKEBALL, SPRITES, URL_ID} from "utils/constants";
+import {PIKACHU_LOADING_GIF, POKEBALL, SPRITES, URL_ID} from "utils/constants";
 import NextLink from "next/link";
 import ROUTES from "utils/routes";
 import {NamedAPIResource} from "utils/types";
@@ -11,19 +11,20 @@ interface Props extends NamedAPIResource {
 
 const PokeCard = (props: Props) => (
     <Center py={6} transition="all .25s ease" _hover={{transform: 'scale(1.01)'}}>
-        <Box
-            border={"1px solid black"}
-            maxW={'320px'}
-            w={'full'}
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'xl'}
-            p={6}
-            textAlign={'center'}>
+        <Box border={"1px solid black"}
+             maxW={'320px'}
+             w={'full'}
+             bg={useColorModeValue('white', 'gray.900')}
+             boxShadow={'2xl'}
+             rounded={'xl'}
+             p={6}
+             textAlign={'center'}>
             <Image
                 src={
                     SPRITES.OFFICIAL_ARTWORK.replace(URL_ID, String(props.id))
                 }
+                fallbackSrc={PIKACHU_LOADING_GIF}
+                alt={props.name}
                 bgColor={"white"}
                 mb={4}
                 pos={'relative'}

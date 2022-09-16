@@ -9,6 +9,10 @@ export const BACKGROUND2_SRC = 'https://assets.pokemon.com/assets//cms2/img/watc
 export const BACKGROUND3_SRC = 'https://assets.pokemon.com/assets//cms2/img/watch-pokemon-tv/_downloads/movie14_wallpaper2_1920.jpg'
 export const POKEBALL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png'
 
+export const LOADER_RED = "https://cdn.dribbble.com/users/1407587/screenshots/3014076/poke.gif"
+export const LOADER = "https://cdn.dribbble.com/users/1081076/screenshots/2832850/pokemongo.gif"
+export const PIKACHU_LOADING_GIF = "https://c.tenor.com/fSsxftCb8w0AAAAd/pikachu-running.gif"
+
 export const URL_ID = `{ID}`;
 export const SPRITES = {
     DREAM_WORLD: `https://raw.githubusercontent.com/PokeAPI/sprites/75569c97b9d26c2103f6c3d75772fabe755bbd1e/sprites/pokemon/other/dream-world/${URL_ID}.svg`,
