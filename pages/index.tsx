@@ -9,7 +9,7 @@ import {BACKGROUND1_SRC} from "utils/constants";
 const Home: NextPage = () => {
     return (
         <Stack direction="row" height={"100vh"} maxWidth={"100vw"} justifyContent={"center"} alignContent={"center"}>
-            <Image src={BACKGROUND1_SRC} width={"100vw"} objectFit={"cover"}/>
+            <Image src={BACKGROUND1_SRC} width={"100vw"} objectFit={"cover"} alt="Home background"/>
             <Glass position="absolute" style={{
                 margin: "auto",
                 left: 0,

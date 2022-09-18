@@ -1,16 +1,15 @@
 import {Box, Center, Heading, Image, Stack, useColorModeValue,} from '@chakra-ui/react';
-import {titleCase} from "utils/string-utils";
+import {getIdFromUrl, titleCase} from "utils/string-utils";
 import {PIKACHU_LOADING_GIF, POKEBALL, SPRITES, URL_ID} from "utils/constants";
 import NextLink from "next/link";
 import ROUTES from "utils/routes";
 import {NamedAPIResource} from "utils/types";
 
-interface Props extends NamedAPIResource {
-    id: number
-}
+const PokeCard = (props: NamedAPIResource) => {
+    const {url} = props
+    const id = getIdFromUrl(url)
 
-const PokeCard = (props: Props) => (
-    <Center py={6} transition="all .25s ease" _hover={{transform: 'scale(1.01)'}}>
+    return <Center py={6} transition="all .25s ease" _hover={{transform: 'scale(1.01)'}}>
         <Box border={"1px solid black"}
              maxW={'320px'}
              w={'full'}
@@ -21,7 +20,7 @@ const PokeCard = (props: Props) => (
              textAlign={'center'}>
             <Image
                 src={
-                    SPRITES.OFFICIAL_ARTWORK.replace(URL_ID, String(props.id))
+                    SPRITES.OFFICIAL_ARTWORK.replace(URL_ID, String(id))
                 }
                 fallbackSrc={PIKACHU_LOADING_GIF}
                 alt={props.name}
@@ -71,12 +70,13 @@ const PokeCard = (props: Props) => (
             </Stack>*/}
 
             <Stack direction={'row'} spacing={4} justifyContent="center">
-                <NextLink href={`${ROUTES.POKEMONS}/${props.id}`}>
+                <NextLink href={`${ROUTES.POKEMONS}/${id}`}>
                     <Image
                         cursor="pointer"
                         src={POKEBALL}
                         boxSize='40px'
                         transition="all .25s ease" _hover={{transform: 'scale(1.3)'}}
+                        alt="Pokeball"
                     />
                     {/*<Button
                         flex={1}
@@ -112,6 +112,6 @@ const PokeCard = (props: Props) => (
             </Stack>
         </Box>
     </Center>
-)
+}
 
 export default PokeCard

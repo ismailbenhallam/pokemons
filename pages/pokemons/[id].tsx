@@ -1,22 +1,25 @@
 import {Box, Flex, Image} from '@chakra-ui/react';
-import {POKEMONS_COUNT, SPRITES, URL_ID} from "utils/constants";
+import {SPRITES, URL_ID} from "utils/constants";
 import PokemonStats from "components/PokemonStats";
 import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage} from "next";
 import fetchPokemonById from "networking/functions/fetch-pokemon-by-id";
 import {ParsedUrlQuery} from "querystring";
+import fetchAllPokemons from "../../networking/functions/fetch-all-pokemons";
+import {getIdFromUrl} from "../../utils/string-utils";
 
 interface Params extends ParsedUrlQuery {
     id: string
 }
 
-export const getStaticPaths: GetStaticPaths<Params> = () => {
-    const paths = Array.from(Array(POKEMONS_COUNT).keys()).map(id => {
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+    const response = await fetchAllPokemons()
+    const paths = response.results.map(namedAPIResource => {
+        const id = getIdFromUrl(namedAPIResource.url)
         return {
-            params: {
-                id: String(id + 1)
-            }
+            params: {id}
         }
     })
+
     return {
         paths,
         fallback: false

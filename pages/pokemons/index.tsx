@@ -15,8 +15,8 @@ const PokemonsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
 
     return <SimpleGrid columns={[1, 2, 3, 4, 5]} spacing={10}
                        bgColor={"primary.900"} px={10}>
-        {results.map((p, index) =>
-            <PokeCard key={p.name} name={p.name} url={p.url} id={index + 1}/>)}
+        {results.map((p) =>
+            <PokeCard key={p.name} name={p.name} url={p.url}/>)}
     </SimpleGrid>
 }
 export default PokemonsPage
