@@ -1,5 +1,6 @@
 export const POKEAPI = "https://pokeapi.co/api/v2"
 export const POKEAPI_SPECIES = `${POKEAPI}/pokemon-species`
+export const POKEAPI_POKEMONS = `${POKEAPI}/pokemon`
 export const POKEMONS_SPECIES_COUNT = 905
 export const POKEMONS_COUNT = 1154
 
