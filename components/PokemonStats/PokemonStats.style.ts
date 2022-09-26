@@ -17,7 +17,8 @@ export const StyledTitle = styled(Text)`
 export const StyledFlexContainer = styled(Flex)`
   gap: 10px;
   height: 350px;
-  width: 600px;
+  width: 450px;
+  max-width: 100%;
 `
 
 const ReversedColumnsWithMaxH = styled(Flex)`
@@ -43,8 +44,9 @@ export const StyledStatBarContainer = styled(ReversedColumnsWithMaxH)`
 `
 
 export const StyledStatName = styled(Text)`
-  font-size: large;
+  font-size: 17px;
   text-align: center;
+  font-weight: bold;
 `
 
 export const StyledCell = styled(Box)`

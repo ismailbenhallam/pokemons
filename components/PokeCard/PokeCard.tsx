@@ -1,9 +1,10 @@
-import {Box, Center, Heading, Image, Stack, useColorModeValue,} from '@chakra-ui/react';
+import {Box, Center, Heading, Image, Stack, Text, useColorModeValue,} from '@chakra-ui/react';
 import {getIdFromUrl, titleCase} from "utils/string-utils";
 import {PIKACHU_LOADING_GIF, POKEBALL, SPRITES, URL_ID} from "utils/constants";
 import NextLink from "next/link";
 import ROUTES from "utils/routes";
 import {NamedAPIResource} from "utils/types";
+import {idFormatter} from "./PokeCard.service";
 
 const PokeCard = (props: NamedAPIResource) => {
     const {url} = props
@@ -16,7 +17,7 @@ const PokeCard = (props: NamedAPIResource) => {
              bg={useColorModeValue('white', 'gray.900')}
              boxShadow={'2xl'}
              rounded={'xl'}
-             p={6}
+             p={5}
              textAlign={'center'}>
             <Image
                 src={
@@ -28,7 +29,8 @@ const PokeCard = (props: NamedAPIResource) => {
                 mb={4}
                 pos={'relative'}
             />
-            <Heading fontSize={'33px'} fontFamily={'mongo'} mb={5}>
+            <Text mb={4} textAlign="left" color="grey">#{idFormatter.format(parseInt(id))}</Text>
+            <Heading fontSize={'33px'} fontFamily={'mongo'} mb={3}>
                 {titleCase(props.name)}
             </Heading>
             {/*<Text fontWeight={600} color={'gray.500'} mb={3}>

@@ -1,11 +1,9 @@
-import {Box, Flex, Image} from '@chakra-ui/react';
-import {SPRITES, URL_ID} from "utils/constants";
-import PokemonStats from "components/PokemonStats";
 import {GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage} from "next";
 import fetchPokemonById from "networking/functions/fetch-pokemon-by-id";
 import {ParsedUrlQuery} from "querystring";
-import fetchAllPokemons from "../../networking/functions/fetch-all-pokemons";
-import {getIdFromUrl} from "../../utils/string-utils";
+import fetchAllPokemons from "networking/functions/fetch-all-pokemons";
+import {getIdFromUrl} from "utils/string-utils";
+import Pokemon from "components/Pokemon";
 
 interface Params extends ParsedUrlQuery {
     id: string
@@ -36,25 +34,10 @@ export const getStaticProps: GetStaticProps<Awaited<ReturnType<typeof fetchPokem
         }
     };
 
-const Pokemon: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (pokemon) => {
+const PokemonPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (pokemon) => {
     return (
-        <Flex justifyContent="space-evenly" bg='blue.100' w={'100vw'} h={"100vh"}>
-            <Flex direction="column" h="max-content" width="max-content">
-                <Image objectFit="contain" src={SPRITES.OFFICIAL_ARTWORK.replace(URL_ID, String(pokemon.id))}
-                       bgColor="lightgrey"
-                       alt="Pokemon official artwork"
-                       borderRadius={20}
-                />
-                <PokemonStats stats={pokemon.stats}/>
-            </Flex>
-            <Flex direction="column">
-                <Box bg={"primary.600"} w="80%" h={"50px"}>
-                    Height
-                </Box>
-            </Flex>
-        </Flex>
-
+        <Pokemon pokemon={pokemon}/>
     )
 }
 
-export default Pokemon
+export default PokemonPage

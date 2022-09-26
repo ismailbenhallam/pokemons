@@ -49,9 +49,9 @@ const Stat = (props: { name: string, ev: number }) => {
 
 const PokemonStats = (props: { stats: PokemonStat[] } & BoxProps) => {
     return (
-        <StyledContainer>
+        <StyledContainer {...props}>
             <StyledTitle>Stats</StyledTitle>
-            <StyledFlexContainer {...props}>
+            <StyledFlexContainer>
                 {props.stats.map(stat =>
                     <Stat key={stat.stat.name} name={stat.stat.name} ev={stat.base_stat}/>
                 )}

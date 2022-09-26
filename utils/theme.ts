@@ -15,8 +15,14 @@ const theme = extendTheme({
                 700: "#7B9CE9",
                 800: "#9CBBFF",
                 900: "#BEDCFF",
+            },
+            error: {
+                500: "#E3350E"
             }
-        }
+        },
+        fonts: {
+            body: `Roboto`,
+        },
     },
     withDefaultColorScheme({
         colorScheme: "primary",
