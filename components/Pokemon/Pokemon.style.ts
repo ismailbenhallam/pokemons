@@ -1,13 +1,21 @@
 import styled from "@emotion/styled";
 import {Flex, Image, Text} from "@chakra-ui/react";
-import PokemonStats from "../PokemonStats";
+import PokemonStats from "./PokemonStats";
+import theme from "../../utils/theme";
 
-const leftColumnWidth = "470px"
+const leftColumnWidth = "400px"
 
 export const StyledContainer = styled(Flex)`
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 0 15px 15px 15px;
+  background-color: ${theme.colors.primary["800"]}
+`
+
+export const StyledRows = styled(Flex)`
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
 `
 
 export const StyledName = styled(Text)`
@@ -18,19 +26,27 @@ export const StyledName = styled(Text)`
 
 export const StyledPokemonImage = styled(Image)`
   object-fit: contain;
-  background-color: lightgrey;
   width: ${leftColumnWidth};
-  height: 430px;
   border-radius: 5px;
+  background-color: #ecebeb;
 `
 
 export const StyledPokemonStats = styled(PokemonStats)`
-  width: ${leftColumnWidth};
+  max-width: ${leftColumnWidth};
+  height: 350px;
+`
+
+export const StyledColumns = styled(Flex)`
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 25px;
+  gap: 40px;
+  width: 70vw;
 `
 
 export const StyledColumn = styled(Flex)`
   flex-direction: column;
-  height: max-content;
-  width: max-content;
+  justify-content: center;
   gap: 15px;
+  height: 100%;
 `

@@ -7,11 +7,11 @@ export const StyledContainer = styled(Flex)`
   gap: 10px;
   border-radius: 20px;
   background-color: darkgrey;
-  padding: 20px 25px 25px;
+  padding: 15px 20px;
 `
 
 export const StyledTitle = styled(Text)`
-  font-size: x-large;
+  font-size: large;
 `
 
 export const StyledFlexContainer = styled(Flex)`
