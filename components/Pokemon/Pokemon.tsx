@@ -17,7 +17,7 @@ interface Props {
     pokemon: Pokemon
 }
 
-export default (props: Props) => {
+const Pokemon = (props: Props) => {
     const {pokemon: {id, name, height, abilities, weight, types, stats}} = props
     const pokemonTypes = types.map(t => t.type.name);
 
@@ -47,4 +47,5 @@ export default (props: Props) => {
             </StyledRows>
         </StyledContainer>
     );
-}
+};
+export default Pokemon

@@ -9,7 +9,7 @@ interface Props {
     info: PokemonInfoProps
 }
 
-export default (props: Props) => {
+const PokemonInfo = (props: Props) => {
     const {info} = props
     return (
         <StyledContainer>
@@ -18,5 +18,6 @@ export default (props: Props) => {
             <PokemonProperty name={"Weight"} value={weightFormatter.format(info.weight)}/>
         </StyledContainer>
     );
-}
+};
+export default PokemonInfo
 

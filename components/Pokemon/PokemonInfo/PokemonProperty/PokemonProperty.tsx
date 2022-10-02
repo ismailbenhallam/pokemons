@@ -6,7 +6,7 @@ interface PokemonPropertyProps {
     value: string | string[]
 }
 
-export default (props: PokemonPropertyProps) => {
+const PokemonProperty = (props: PokemonPropertyProps) => {
     const {name, value} = props
     const isArray = Array.isArray(value);
 
@@ -19,4 +19,5 @@ export default (props: PokemonPropertyProps) => {
             : <StyledPropertyValue>{titleCase(value)}</StyledPropertyValue>
         }
     </StyledContainer>
-}
+};
+export default PokemonProperty
