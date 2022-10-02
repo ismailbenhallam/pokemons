@@ -9,7 +9,7 @@ export const StyledContainer = styled(Flex)`
   flex-direction: column;
   align-items: center;
   padding: 0 15px 15px 15px;
-  background-color: ${theme.colors.primary["800"]};
+  background-color: ${theme.colors.primary["500"]};
   @media (max-width: 768px) {
     padding: 0;
   }

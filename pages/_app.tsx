@@ -1,12 +1,30 @@
+import { ChakraProvider, useBoolean } from "@chakra-ui/react";
+import FullScreenLoader from "components/FullScreenLoader";
+import { AppProps } from "next/app";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import 'styles/globals.css'
-import type {AppProps} from 'next/app'
-import {ChakraProvider} from "@chakra-ui/react";
 import theme from "utils/theme";
 
-function MyApp({Component, pageProps}: AppProps) {
-    return <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
-    </ChakraProvider>
-}
+const MyApp = ({ Component, pageProps }: AppProps) => {
+    const router = useRouter();
+    const [loading, { on, off }] = useBoolean();
 
-export default MyApp
+    useEffect(() => {
+        //<-- this useEffect will be triggered just one time at component initialization
+        router.events.on("routeChangeStart", () => {
+            on();
+        });
+        router.events.on("routeChangeComplete", () => {
+            off();
+        });
+    }, []);
+
+    return (
+        <ChakraProvider theme={theme}>
+            {loading ? <FullScreenLoader /> : <Component {...pageProps} />}
+        </ChakraProvider>
+    );
+};
+
+export default MyApp;
