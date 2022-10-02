@@ -16,8 +16,11 @@ const PokemonTypes = (props: { types: string[] }) => {
 const Type = (props: { type: PokemonType }) => {
     const {type: {name, color, bgColors}} = props
 
+    if (bgColors.length == 1)
+        bgColors.push(bgColors[0])
+
     return <Text color={color} py="1" w="140px" borderRadius="5px" textAlign="center"
-                 background={`linear-gradient(180deg, ${bgColors[0]} 50%, ${bgColors.length > 1 ? bgColors[1] : bgColors[0]} 50%)`}>
+                 background={`linear-gradient(180deg, ${bgColors[0]} 50%, ${bgColors[1]} 50%)`}>
         {name}
     </Text>
 }

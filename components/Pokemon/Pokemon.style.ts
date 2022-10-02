@@ -9,7 +9,10 @@ export const StyledContainer = styled(Flex)`
   flex-direction: column;
   align-items: center;
   padding: 0 15px 15px 15px;
-  background-color: ${theme.colors.primary["800"]}
+  background-color: ${theme.colors.primary["800"]};
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `
 
 export const StyledRows = styled(Flex)`
@@ -29,11 +32,13 @@ export const StyledPokemonImage = styled(Image)`
   width: ${leftColumnWidth};
   border-radius: 5px;
   background-color: #ecebeb;
+  max-width: 100vw;
 `
 
 export const StyledPokemonStats = styled(PokemonStats)`
-  max-width: ${leftColumnWidth};
+  width: ${leftColumnWidth};
   height: 350px;
+  max-width: 100vw;
 `
 
 export const StyledColumns = styled(Flex)`
@@ -42,6 +47,9 @@ export const StyledColumns = styled(Flex)`
   padding: 25px;
   gap: 40px;
   width: 70vw;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const StyledColumn = styled(Flex)`
