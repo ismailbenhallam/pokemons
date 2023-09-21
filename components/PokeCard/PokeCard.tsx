@@ -33,44 +33,6 @@ const PokeCard = (props: NamedAPIResource) => {
             <Heading fontSize={'33px'} fontFamily={'mongo'} mb={3}>
                 {titleCase(props.name)}
             </Heading>
-            {/*<Text fontWeight={600} color={'gray.500'} mb={3}>
-                @{props.id}
-            </Text>*/}
-            {/* <Text
-                textAlign={'center'}
-                color={useColorModeValue('gray.700', 'gray.400')}
-                px={3}>
-                Actress, musician, songwriter and artist. PM for work inquires or{' '}
-                <Link href={'#'} color={'blue.400'}>
-                    #tag
-                </Link>{' '}
-                me in your posts
-            </Text>*/}
-
-            {/*<Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
-                <Badge
-                    px={2}
-                    py={1}
-                    bg={useColorModeValue('gray.50', 'gray.800')}
-                    fontWeight={'400'}>
-                    #art
-                </Badge>
-                <Badge
-                    px={2}
-                    py={1}
-                    bg={useColorModeValue('gray.50', 'gray.800')}
-                    fontWeight={'400'}>
-                    #photography
-                </Badge>
-                <Badge
-                    px={2}
-                    py={1}
-                    bg={useColorModeValue('gray.50', 'gray.800')}
-                    fontWeight={'400'}>
-                    #music
-                </Badge>
-            </Stack>*/}
-
             <Stack direction={'row'} spacing={4} justifyContent="center">
                 <NextLink href={`${ROUTES.POKEMONS}/${id}`}>
                     <Image
@@ -80,37 +42,7 @@ const PokeCard = (props: NamedAPIResource) => {
                         transition="all .25s ease" _hover={{transform: 'scale(1.3)'}}
                         alt="Pokeball"
                     />
-                    {/*<Button
-                        flex={1}
-                        fontSize={'18px'}
-                        rounded={'full'}
-                        bgColor="secondary.500"
-                        _hover={{
-                            bgColor: "secondary.600"
-                        }}
-                        color="primary.500">
-                        Check Pokemon
-                    </Button>*/}
                 </NextLink>
-
-                {/*Add to favorite*/}
-                {/*<Button
-                    flex={1}
-                    fontSize={'sm'}
-                    rounded={'full'}
-                    bg={'blue.400'}
-                    color={'white'}
-                    boxShadow={
-                        '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                    }
-                    _hover={{
-                        bg: 'blue.500',
-                    }}
-                    _focus={{
-                        bg: 'blue.500',
-                    }}>
-                    Follow
-                </Button>*/}
             </Stack>
         </Box>
     </Center>

@@ -15,7 +15,7 @@ const PokemonInfo = (props: Props) => {
         <StyledContainer>
             <PokemonProperty name={"Height"} value={heightFormatter.format(info.height)}/>
             <PokemonProperty name={"Abilities"} value={info.abilities.map(t => t.ability.name)}/>
-            <PokemonProperty name={"Weight"} value={weightFormatter.format(info.weight)}/>
+            <PokemonProperty name={"Weight"} value={weightFormatter.format(info.weight / 10)}/>
         </StyledContainer>
     );
 };
